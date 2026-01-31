@@ -1,0 +1,42 @@
+export type Language = 'my' | 'en';
+
+export interface WorkItem {
+    myT: string;
+    enT: string;
+    myD: string;
+    enD: string;
+    icon: string;
+}
+
+export interface ShowcaseItem {
+    id: number;
+    myTitle: string;
+    enTitle: string;
+    emoji: string;
+    myDesc: string;
+    enDesc: string;
+    enFull: string;
+    myFull: string;
+    // New Details
+    studentName: string;
+    studentAge: string;
+    myMaterials: string[];
+    enMaterials: string[];
+    mySteps: string[];
+    enSteps: string[];
+    myOutcome: string;
+    enOutcome: string;
+}
+
+export interface JoinItem {
+    myT: string;
+    enT: string;
+    emoji: string;
+    border: string;
+}
+
+export type Translations = {
+    [key in Language]: {
+        [key: string]: string;
+    };
+};

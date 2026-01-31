@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>စိတ်ကူး | Seik Kuu - Empowering Displaced Dreams</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pyidaungsu:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-cyan: #22d3ee;
+      --primary-orange: #fb923c;
+      --bg-dark: #020617;
+      --bg-darker: #0b1121;
+    }
+    body {
+      font-family: 'Pyidaungsu', sans-serif;
+      background-color: var(--bg-dark);
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+      line-height: 2.5; 
+      overflow-x: hidden;
+    }
+
+    /* Background Effects */
+    .bg-grid {
+      background-size: 50px 50px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    .ambient-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(34,211,238,0.08) 0%, rgba(0,0,0,0) 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 2.0; 
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      line-height: 2.5; 
+      margin-bottom: 1rem;
+    }
+
+    /* Premium Glassmorphism */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .glass-panel:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Neon Borders on Hover */
+    .neon-border {
+      position: relative;
+    }
+    .neon-border::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(45deg, transparent, rgba(34,211,238,0.3), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(var(--orbit-dist, 80px)) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(var(--orbit-dist, 80px)) rotate(-360deg); }
+    }
+    @keyframes orbit-reverse {
+      from { transform: rotate(360deg) translateX(var(--orbit-dist-outer, 120px)) rotate(-360deg); }
+      to { transform: rotate(0deg) translateX(var(--orbit-dist-outer, 120px)) rotate(0deg); }
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); }
+      50% { box-shadow: 0 0 25px rgba(34, 211, 238, 0.5); }
+    }
+
+    .floating { animation: float 6s ease-in-out infinite; }
+    .orbiting { --orbit-dist: 70px; animation: orbit 20s linear infinite; }
+    .orbiting-reverse { --orbit-dist-outer: 130px; animation: orbit-reverse 25s linear infinite; }
+    
+    @media (min-width: 768px) {
+      .orbiting { --orbit-dist: 110px; }
+      .orbiting-reverse { --orbit-dist-outer: 180px; }
+    }
+
+    .tech-gradient {
+      background: linear-gradient(135deg, #22d3ee 0%, #38bdf8 50%, #fb923c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: gradientMove 5s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .loader {
+      border: 3px solid rgba(34, 211, 238, 0.1);
+      border-top: 3px solid var(--primary-cyan);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      animation: spin 1s linear infinite;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+
+    .ai-result-block {
+      background: rgba(30, 41, 59, 0.4);
+      border-left: 3px solid var(--primary-orange);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 0 0.75rem 0.75rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .ai-result-block::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(90deg, rgba(251, 146, 60, 0.05), transparent);
+        pointer-events: none;
+    }
+
+    .terminal-overlay {
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?external=react,react-dom",
+    "recharts": "https://esm.sh/recharts@2.12.3?external=react,react-dom"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="selection:bg-cyan-500/30">
+  <div class="fixed inset-0 bg-grid z-[-1] opacity-40"></div>
+  <div class="ambient-glow"></div>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
