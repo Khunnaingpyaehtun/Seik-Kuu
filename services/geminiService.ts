@@ -2,6 +2,7 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 import { Language } from "../types";
 
+// Always use named parameter and process.env.API_KEY directly.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 // Main STEM Mentor service
@@ -64,7 +65,6 @@ export const speakText = async (text: string) => {
             config: {
                 responseModalities: [Modality.AUDIO],
                 speechConfig: {
-                    // Using a supported voice name: Kore
                     voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Kore' } },
                 },
             },
@@ -74,7 +74,6 @@ export const speakText = async (text: string) => {
         if (!base64Audio) return;
 
         const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
-        // Correctly decoding raw PCM audio data as per guidelines
         const audioBuffer = await decodeAudioData(decode(base64Audio), audioContext, 24000, 1);
         
         const source = audioContext.createBufferSource();
@@ -90,7 +89,6 @@ export const speakText = async (text: string) => {
     }
 };
 
-// Audio Utilities following @google/genai guidelines
 function decode(base64: string) {
   const binaryString = atob(base64);
   const len = binaryString.length;
