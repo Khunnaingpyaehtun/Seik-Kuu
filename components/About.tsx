@@ -1,16 +1,17 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 interface AboutProps {
   t: (key: string) => string;
 }
 
 const auImages = [
-  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU1.jpg",
-  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU2.jpg",
-  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU3.jpg",
-  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU4.jpg",
-  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU5.jpg"
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/Picture/AU1.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/Picture/AU2.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/Picture/AU3.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/Picture/AU4.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/Picture/AU5.jpg"
 ];
 
 const About: React.FC<AboutProps> = ({ t }) => {
@@ -39,9 +40,19 @@ const About: React.FC<AboutProps> = ({ t }) => {
             <h2 className="text-3xl md:text-5xl font-bold text-white leading-[2.0] uppercase tracking-tight">
               {t('about-h2')}
             </h2>
-            <p className="text-slate-300 text-base md:text-lg lg:text-xl leading-[2.5] font-medium border-l border-white/10 pl-6">
+            <p className="text-slate-300 text-base md:text-lg lg:text-xl leading-[2.5] font-medium border-l border-white/10 pl-6 line-clamp-4 md:line-clamp-6">
               {t('about-p')}
             </p>
+            
+            <div className="pl-6">
+                 <Link 
+                    to="/about"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-cyan-400 font-bold uppercase tracking-widest text-xs transition-all group/btn"
+                 >
+                    {t('btn-read-more')}
+                    <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                 </Link>
+            </div>
           </div>
 
           {/* Image Gallery Section */}

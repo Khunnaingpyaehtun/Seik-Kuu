@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface ContactProps {
@@ -13,18 +14,18 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
           {t('nav-contact')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-          <div className="space-y-3 p-6 rounded-3xl hover:bg-white/5 transition-all shadow-lg border border-transparent hover:border-white/10">
-            <div className="text-4xl mb-4">📧</div>
+          <div className="space-y-3 p-6 rounded-3xl hover:bg-white/5 transition-all shadow-lg border border-transparent hover:border-white/10 flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/mail%20.svg" alt="Email" className="w-12 h-12 mb-4 object-contain" />
             <p className="text-lg font-bold text-slate-300">Email</p>
             <p className="text-cyan-400 font-black text-sm break-all">contact@seikkuu.org</p>
           </div>
-          <div className="space-y-3 p-6 rounded-3xl hover:bg-white/5 transition-all shadow-lg border border-transparent hover:border-white/10">
-            <div className="text-4xl mb-4">📱</div>
+          <div className="space-y-3 p-6 rounded-3xl hover:bg-white/5 transition-all shadow-lg border border-transparent hover:border-white/10 flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/tele.svg" alt="Telegram" className="w-12 h-12 mb-4 object-contain" />
             <p className="text-lg font-bold text-slate-300">Telegram</p>
             <p className="text-orange-400 font-black text-sm">@seikkuu_project</p>
           </div>
-          <div className="space-y-3 p-6 rounded-3xl hover:bg-white/5 transition-all shadow-lg border border-transparent hover:border-white/10">
-            <div className="text-4xl mb-4">🌐</div>
+          <div className="space-y-3 p-6 rounded-3xl hover:bg-white/5 transition-all shadow-lg border border-transparent hover:border-white/10 flex flex-col items-center">
+            <img src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/FB%20.svg" alt="Facebook" className="w-12 h-12 mb-4 object-contain" />
             <p className="text-lg font-bold text-slate-300">Facebook</p>
             <p className="text-white font-black text-sm">Seik Kuu Project</p>
           </div>

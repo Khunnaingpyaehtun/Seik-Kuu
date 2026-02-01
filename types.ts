@@ -1,3 +1,4 @@
+
 export type Language = 'my' | 'en';
 
 export interface WorkItem {
@@ -5,7 +6,7 @@ export interface WorkItem {
     enT: string;
     myD: string;
     enD: string;
-    icon: string;
+    color: string;
 }
 
 export interface RoadmapItem {
@@ -41,7 +42,7 @@ export interface ShowcaseItem {
 export interface JoinItem {
     myT: string;
     enT: string;
-    emoji: string;
+    iconUrl: string;
     border: string;
 }
 

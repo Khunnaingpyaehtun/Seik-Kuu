@@ -18,7 +18,7 @@ const ReadyAgent: React.FC<ReadyAgentProps> = ({ lang }) => {
     const [mood, setMood] = useState<'neutral' | 'thinking' | 'happy' | 'angry'>('neutral');
     
     const chatEndRef = useRef<HTMLDivElement>(null);
-    const mascotGif = "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/EYE.gif";
+    const mascotGif = "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/gif/EYE.gif";
     const logoIcon = "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/icno.png";
 
     useEffect(() => {

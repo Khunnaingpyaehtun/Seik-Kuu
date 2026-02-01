@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { roadmapData } from '../constants';
 import { Language } from '../types';
@@ -35,7 +36,6 @@ const Roadmap: React.FC<RoadmapProps> = ({ t, lang }) => {
                 <div className={`glass-panel p-8 rounded-3xl border-t-4 transition-all hover:-translate-y-1 ${item.status === 'completed' ? 'border-green-500' : item.status === 'ongoing' ? 'border-orange-500 animate-[pulse-glow_4s_infinite]' : 'border-slate-700'}`}>
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest">{item.phase}</span>
-                    <span className="text-2xl">{item.icon}</span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 uppercase leading-tight">
                     {lang === 'my' ? item.myTitle : item.enTitle}

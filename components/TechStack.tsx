@@ -80,13 +80,13 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                 onClick={() => setActiveHub('issue')} 
                 className={`flex-1 py-4 rounded-2xl font-black uppercase text-xs tracking-widest transition-all flex items-center justify-center gap-3 ${activeHub === 'issue' ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20' : 'text-slate-500 hover:text-white hover:bg-white/5'}`}
             >
-                <span className="text-lg">📜</span> {t('tech-tab-issue')}
+                {t('tech-tab-issue')}
             </button>
             <button 
                 onClick={() => setActiveHub('verify')} 
                 className={`flex-1 py-4 rounded-2xl font-black uppercase text-xs tracking-widest transition-all flex items-center justify-center gap-3 ${activeHub === 'verify' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/20' : 'text-slate-500 hover:text-white hover:bg-white/5'}`}
             >
-                <span className="text-lg">🛡️</span> {t('tech-tab-verify')}
+                {t('tech-tab-verify')}
             </button>
         </div>
 
@@ -154,7 +154,6 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
 
                         {issueStep === 'authorized' && (
                             <div className="space-y-8 text-center bg-cyan-500/5 p-10 rounded-[2.5rem] border border-cyan-500/20">
-                                <div className="w-24 h-24 bg-cyan-500/20 rounded-full flex items-center justify-center text-4xl mx-auto shadow-[0_0_40px_rgba(34,211,238,0.2)]">🔑</div>
                                 <h4 className="text-2xl font-black text-white uppercase tracking-wide">Validation Successful</h4>
                                 <button onClick={handleMint} className="w-full py-5 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-2xl uppercase tracking-widest transition-all shadow-2xl shadow-cyan-500/40">
                                     {t('sbt-btn')}
@@ -177,7 +176,6 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
 
                         {issueStep === 'success' && (
                             <div className="p-10 bg-green-500/10 border border-green-500/20 rounded-[2.5rem] text-center space-y-6">
-                                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-3xl mx-auto shadow-[0_0_20px_rgba(34,197,94,0.3)]">✅</div>
                                 <p className="text-green-400 text-lg font-black uppercase tracking-wide">{t('sbt-success')}</p>
                                 <div className="p-4 bg-black/40 rounded-xl text-left border border-white/5">
                                     <p className="text-[10px] text-slate-500 font-bold uppercase mb-1">Transaction Hash:</p>
@@ -191,9 +189,7 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                     {/* Preview Card */}
                     <div className="flex justify-center perspective-1000">
                         <div className={`relative w-80 h-[480px] rounded-[2.5rem] bg-slate-950 border border-white/10 p-10 flex flex-col transition-all duration-1000 transform-style-3d ${issueStep === 'success' ? 'scale-105 rotate-y-12 shadow-[0_30px_60px_rgba(34,211,238,0.15)] border-cyan-500/40' : 'opacity-30 grayscale rotate-y-[-10deg]'}`}>
-                            <div className="absolute top-8 right-8 text-5xl opacity-10">🏅</div>
-                            <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-3xl mb-12 shadow-inner border border-white/10">🎓</div>
-                            <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-2">Soulbound Asset</p>
+                            <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-2 mt-auto">Soulbound Asset</p>
                             <h4 className="text-2xl font-black text-white leading-tight mb-8">{course}</h4>
                             <div className="mt-auto">
                                 <p className="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Authentic Graduate</p>
@@ -222,12 +218,10 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <button onClick={() => setZkRole('student')} className="p-12 glass-panel rounded-[2.5rem] border-t-8 border-orange-500 hover:bg-orange-500/10 transition-all group text-left">
-                                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">🎓</div>
                                     <h4 className="text-2xl font-black text-white uppercase mb-2">{t('zk-role-student')}</h4>
                                     <p className="text-slate-500 text-sm">Generate a privacy-masked proof of your skills.</p>
                                 </button>
                                 <button onClick={() => setZkRole('institution')} className="p-12 glass-panel rounded-[2.5rem] border-t-8 border-indigo-500 hover:bg-indigo-500/10 transition-all group text-left">
-                                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">🏫</div>
                                     <h4 className="text-2xl font-black text-white uppercase mb-2">{t('zk-role-institution')}</h4>
                                     <p className="text-slate-500 text-sm">Verify an existing credential hash from a student.</p>
                                 </button>
@@ -283,7 +277,6 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                                 {zkStep === 'result' && (
                                     <div className="p-8 bg-green-500/10 border border-green-500/20 rounded-[2rem] animate-in zoom-in-95 duration-500">
                                         <div className="flex items-center gap-4 mb-4">
-                                            <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-xl">✅</div>
                                             <p className="text-green-400 font-black text-sm uppercase tracking-wide">{t('zk-verified-msg')}</p>
                                         </div>
                                         {zkRole === 'student' && (

@@ -37,7 +37,7 @@ const JoinUs: React.FC<JoinUsProps> = ({ t, lang }) => {
             onClick={() => handleJoinClick(lang === 'my' ? j.myT : j.enT)}
             className={`glass-panel p-6 md:p-8 rounded-2xl border-t-4 ${j.border} shadow-lg flex flex-col items-center text-center transition-all hover:-translate-y-2 hover:bg-white/5 active:scale-95 w-full`}
           >
-            <div className="text-3xl md:text-4xl mb-4">{j.emoji}</div>
+            <img src={j.iconUrl} alt={j.enT} className="w-16 h-16 md:w-20 md:h-20 mb-6 object-contain" />
             <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
               {lang === 'my' ? j.myT : j.enT}
             </h3>

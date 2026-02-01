@@ -54,17 +54,25 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
             <div className="w-32 h-32 sm:w-40 lg:w-48 bg-slate-900/80 rounded-full border border-cyan-500/50 flex items-center justify-center floating z-20 shadow-[0_0_50px_rgba(34,211,238,0.2)] backdrop-blur-xl relative overflow-hidden aspect-square">
               <div className="absolute inset-0 rounded-full border border-cyan-400 opacity-20 animate-[pulse-glow_3s_infinite]"></div>
               <img 
-                src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/EYE.gif" 
+                src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/gif/EYE.gif" 
                 alt="AI Core"
                 className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]"
               />
             </div>
 
             {/* Orbiting Elements */}
-            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center text-xl md:text-2xl border border-cyan-400/50 orbiting shadow-lg z-10">⚙️</div>
-            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center text-xl md:text-2xl border border-orange-400/50 orbiting shadow-lg z-10" style={{ animationDelay: '-6s' }}>⚛️</div>
-            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center text-xl md:text-2xl border border-purple-400/50 orbiting-reverse z-10">💻</div>
-            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center text-xl md:text-2xl border border-green-400/50 orbiting-reverse z-10" style={{ animationDelay: '-7.5s' }}>🔬</div>
+            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center border border-cyan-400/50 orbiting shadow-lg z-10 text-xl">
+              ⚙️
+            </div>
+            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center border border-orange-400/50 orbiting shadow-lg z-10 text-xl" style={{ animationDelay: '-6s' }}>
+              ⚛️
+            </div>
+            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center border border-purple-400/50 orbiting-reverse z-10 text-xl">
+              💻
+            </div>
+            <div className="absolute w-10 h-10 md:w-12 md:h-12 glass-panel rounded-full flex items-center justify-center border border-green-400/50 orbiting-reverse z-10 text-xl" style={{ animationDelay: '-7.5s' }}>
+              🔬
+            </div>
 
             {/* Perfect Circle Ring */}
             <div className="absolute w-full h-full border-2 border-dashed border-cyan-500/20 rounded-full animate-[spin_20s_linear_infinite] pointer-events-none box-border"></div>

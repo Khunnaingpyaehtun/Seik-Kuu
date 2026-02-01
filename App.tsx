@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import AboutPage from './components/AboutPage';
 import TechStack from './components/TechStack';
 import Work from './components/Work';
 import Showcase from './components/Showcase';
@@ -68,6 +69,7 @@ const App: React.FC = () => {
               <JoinUs t={t} lang={lang} />
             </>
           } />
+          <Route path="/about" element={<AboutPage t={t} />} />
           <Route path="/tech" element={<TechStack t={t} />} />
           <Route path="/showcase" element={<Showcase t={t} lang={lang} />} />
           <Route path="/project/:id" element={<ProjectDetail t={t} lang={lang} />} />

@@ -33,20 +33,20 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center text-left">
         <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-3 group">
           <img 
-            src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/EYE.gif" 
+            src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/gif/EYE.gif" 
             alt="Seik Kuu Icon" 
             className="w-10 h-10 md:w-14 md:h-14 rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300"
           />
           <div className="flex flex-col justify-center">
             {lang === 'en' ? (
                 <img 
-                    src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/IDEAE.svg" 
+                    src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/logo/IDEAENG.svg" 
                     alt="Seik Kuu" 
                     className="h-8 md:h-14 w-auto object-contain transition-all duration-300"
                 />
             ) : (
                 <img 
-                    src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/IDEAMM.svg" 
+                    src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/logo/IDEAMYA.svg" 
                     alt="Seik Kuu" 
                     className="h-7 md:h-14 w-auto object-contain transition-all duration-300"
                 />
@@ -57,28 +57,24 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           <div className="hidden lg:flex items-center gap-6 text-[10px] font-black text-slate-300 tracking-widest uppercase">
             
             <button onClick={() => handleNavClick('about')} className="hover:text-cyan-400 transition uppercase">
-                {t('nav-history')}
+                About Us
             </button>
             
             <Link to="/tech" className={`hover:text-cyan-400 transition ${isActive('/tech') ? 'text-cyan-400' : ''}`}>
-                {t('nav-tech')}
+                Certificate
             </Link>
 
             <button onClick={() => handleNavClick('work')} className="hover:text-cyan-400 transition uppercase">
-                {t('nav-work')}
+                Activity
             </button>
             
             <button onClick={() => handleNavClick('showcase')} className={`hover:text-cyan-400 transition uppercase ${isActive('/showcase') ? 'text-cyan-400' : ''}`}>
-                {t('nav-showcase')}
+                SHOWCASE
             </button>
             
             <Link to="/ai-lab" className={`transition ${isActive('/ai-lab') ? 'text-orange-400' : 'text-slate-300 hover:text-orange-300'}`}>
-                {t('nav-ai')}
+                AI MENTOR
             </Link>
-
-            <button onClick={() => handleNavClick('contact')} className="hover:text-cyan-400 transition uppercase">
-                {t('nav-contact')}
-            </button>
           </div>
           <div className="flex bg-slate-900/50 rounded-lg p-1 border border-white/10 text-[9px] font-bold">
             <button 
@@ -94,8 +90,8 @@ const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
               EN
             </button>
           </div>
-          <button onClick={() => handleNavClick('join-us')} className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 md:px-6 py-2 rounded-lg md:rounded-xl text-[9px] md:text-xs font-black transition-all shadow-lg uppercase tracking-wider active:scale-95">
-            {t('nav-join')}
+          <button onClick={() => handleNavClick('contact')} className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 md:px-6 py-2 rounded-lg md:rounded-xl text-[9px] md:text-xs font-black transition-all shadow-lg uppercase tracking-wider active:scale-95">
+            CONTACT Us
           </button>
         </div>
       </div>

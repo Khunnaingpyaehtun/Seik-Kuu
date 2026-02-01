@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
@@ -36,13 +37,13 @@ const Footer: React.FC<FooterProps> = ({ t, lang = 'my' }) => {
               <div className="flex flex-col">
                 {lang === 'en' ? (
                     <img 
-                        src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/IDEA.png" 
+                        src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/logo/IDEAENG.svg" 
                         alt="Seik Kuu" 
                         className="h-10 w-auto object-contain"
                     />
                 ) : (
                     <img 
-                        src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/IDEAB.png" 
+                        src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/logo/IDEAMYA.svg" 
                         alt="Seik Kuu" 
                         className="h-10 w-auto object-contain"
                     />
@@ -72,7 +73,7 @@ const Footer: React.FC<FooterProps> = ({ t, lang = 'my' }) => {
               {/* Email Link */}
               <a href="mailto:seikkuu.tech@gmail.com" className="flex items-center gap-3 group cursor-pointer">
                 <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-cyan-500/50 transition-colors">
-                  <span className="text-sm">📧</span>
+                  <img src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/mail%20.svg" alt="Email" className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">Email</p>
@@ -83,7 +84,7 @@ const Footer: React.FC<FooterProps> = ({ t, lang = 'my' }) => {
               {/* Telegram Link */}
               <a href="https://t.me/seikkuutech" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group cursor-pointer">
                 <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-orange-500/50 transition-colors">
-                  <span className="text-sm">📱</span>
+                   <img src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/tele.svg" alt="Telegram" className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">Telegram</p>
@@ -94,7 +95,7 @@ const Footer: React.FC<FooterProps> = ({ t, lang = 'my' }) => {
               {/* Facebook Link */}
               <a href="https://www.facebook.com/profile.php?id=61586989756894" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group cursor-pointer">
                 <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-blue-500/50 transition-colors">
-                  <span className="text-sm">🌐</span>
+                   <img src="https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/FB%20.svg" alt="Facebook" className="w-4 h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">Facebook</p>
@@ -109,7 +110,7 @@ const Footer: React.FC<FooterProps> = ({ t, lang = 'my' }) => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[9px] text-slate-600 font-black uppercase tracking-[0.2em]">
-            © 2024 - 2026 Seik Kuu Project.
+            © 2026 Seik Kuu Project.
           </p>
           <div className="flex gap-6">
             <span className="text-[9px] text-slate-700 font-bold uppercase tracking-widest">Digital Resilience</span>

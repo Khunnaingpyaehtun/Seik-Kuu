@@ -3,15 +3,27 @@ import { Translations, WorkItem, ShowcaseItem, JoinItem, RoadmapItem } from './t
 
 export const translations: Translations = {
     my: {
-        "nav-brand": "စိတ်ကူး", "nav-history": "သမိုင်းကြောင်း", "nav-tech": "နည်းပညာ", "nav-work": "လုပ်ဆောင်ချက်များ", "nav-showcase": "ဖန်တီးမှုများ", "nav-ai": "AI Mentor", "nav-contact": "ဆက်သွယ်ရန်", "nav-join": "JOIN US",
+        "nav-brand": "စိတ်ကူး", "nav-history": "HISTORY", "nav-tech": "TECH", "nav-work": "WORK", "nav-showcase": "SHOWCASE", "nav-ai": "AI MENTOR", "nav-contact": "ဆက်သွယ်ရန်", "nav-join": "JOIN US",
         "hero-badge": "Tech Makes Everything", "hero-h1-1": "Follow Your Dream...",
         "hero-p": "စစ်ဘေးရှောင်ကလေးငယ်များ၏ အိပ်မက်များကို STEM နှင့် Robotics ပညာရပ်များဖြင့် အကောင်အထည်ဖော်ပေးခြင်း။ ဒစ်ဂျစ်တယ်ကြံ့ခိုင်မှုနှင့် ဆန်းသစ်တီထွင်မှုကို အခြေခံ၍ အနာဂတ်ကို တည်ဆောက်နေပါသည်။",
         "btn-ai-mentor": "AI MENTOR", "btn-showcase": "ဖန်တီးမှုများ",
         
-        "about-h2": "ကျွန်ုပ်တို့၏ ရည်မှန်းချက်",
+        "about-h2": "ကျွန်ုပ်တို့အကြောင်း",
         "about-p": "\"စိတ်ကူး\" (Seik Kuu) သည် သာမန် ပညာရေးစီမံကိန်းတစ်ခု မဟုတ်ပါ။ ကျွန်ုပ်တို့သည် ပဋိပက္ခကြားမှ ကလေးငယ်များအတွက် ဒစ်ဂျစ်တယ်ခံတပ်တစ်ခုကို တည်ဆောက်နေခြင်းဖြစ်သည်။ IDP စခန်းများမှ ကလေးငယ်များကို ကမ္ဘာ့အဆင့်မီ နည်းပညာများနှင့် ချိတ်ဆက်ပေးပြီး၊ ၎င်းတို့၏ ပညာရေးလမ်းကြောင်းမပျောက်ပျက်စေရန် နည်းပညာဖြင့် အကာအကွယ်ပေးထားပါသည်။",
         "about-quote": "အဓိပ္ပာယ်: \"စိတ်ကူး\" သို့မဟုတ် \"တီထွင်ဖန်တီးမှု\"",
-        
+        "btn-read-more": "အသေးစိတ် ဖတ်ရှုရန်",
+        "about-full": `စိတ်ကူး (Seik Kuu) စီမံကိန်းသည် မြန်မာနိုင်ငံ၏ ပဋိပက္ခဒဏ်ခံစားနေရသော ဒေသများရှိ ကလေးငယ်များအတွက် ရည်ရွယ်၍ ၂၀၂၄ ခုနှစ်တွင် စတင်တည်ထောင်ခဲ့သော ပညာရေးလှုပ်ရှားမှုတစ်ခု ဖြစ်ပါသည်။ ကျွန်ုပ်တို့၏ အဓိကရည်မှန်းချက်မှာ ပထဝီဝင်အနေအထားအရ ကန့်သတ်ခံထားရသော်လည်း ကလေးငယ်များ၏ စိတ်ကူးအိပ်မက်များကို နည်းပညာဖြင့် အကောင်အထည်ဖော်နိုင်စေရန် ဖြစ်သည်။
+
+စစ်ဘေးရှောင်စခန်း (IDP Camps) များတွင် နေထိုင်ရသော ကလေးငယ်များသည် ပုံမှန်စာသင်ကြားခွင့် ဆုံးရှုံးနေရုံသာမက ခေတ်မီနည်းပညာများနှင့်လည်း အလှမ်းဝေးနေရပါသည်။ "စိတ်ကူး" သည် ဤကွာဟချက်ကို ဖြည့်ဆည်းပေးရန်အတွက် STEM (Science, Technology, Engineering, Mathematics) နှင့် Robotics ပညာရပ်များကို လက်တွေ့ကျကျ သင်ကြားပေးလျက်ရှိပါသည်။
+
+ကျွန်ုပ်တို့သည် ရိုးရှင်းသော ကတ်ထူပြားများ၊ စွန့်ပစ်ပစ္စည်းများနှင့် အခြေခံ အီလက်ထရွန်နစ် ပစ္စည်းများကို ပေါင်းစပ်ကာ "Low-cost, High-impact" ဆန်းသစ်တီထွင်မှုများကို ဖန်တီးပေးပါသည်။ ကလေးငယ်များသည် ကိုယ်တိုင် စက်ရုပ်ငယ်များ တည်ဆောက်ခြင်း၊ ပရိုဂရမ်ရေးသားခြင်းနှင့် နေ့စဉ်ဘဝ ပြဿနာများကို ဖြေရှင်းနိုင်သော ကိရိယာများ တီထွင်ခြင်းတို့ကို လေ့လာခွင့်ရရှိပါသည်။
+
+ထို့အပြင် Blockchain နည်းပညာကို အသုံးပြု၍ "Soulbound Token (SBT)" လက်မှတ်များကို ထုတ်ပေးခြင်းဖြင့် ကလေးငယ်များ၏ ပညာရေးမှတ်တမ်းများကို လုံခြုံစွာ သိမ်းဆည်းပေးထားပါသည်။ နေရာဒေသ ပြောင်းရွှေ့ရသော်လည်း ၎င်းတို့၏ အရည်အချင်းစစ်ဆေးချက်များမှာ ပျောက်ပျက်သွားမည် မဟုတ်ပါ။
+
+AI နည်းပညာကိုလည်း အသုံးပြုထားပြီး၊ "Ready" ဟုခေါ်သော AI Mentor မှတစ်ဆင့် ကလေးငယ်များအား ၂၄ နာရီပတ်လုံး လမ်းညွှန်မှုပေးလျက်ရှိပါသည်။ သင့်တွင်ရှိသော ပစ္စည်းများကို ပြောပြလိုက်ရုံဖြင့် AI က လုပ်ဆောင်နိုင်မည့် ပရောဂျက်များကို အကြံပြုပေးနိုင်ပါသည်။
+
+"စိတ်ကူး" သည် ပညာရေးတစ်ခုတည်းကိုသာ ပေးသည်မဟုတ်ဘဲ၊ ကလေးငယ်များ၏ ယုံကြည်မှု (Confidence)၊ ကြံ့ခိုင်မှု (Resilience) နှင့် အနာဂတ်အပေါ် မျှော်လင့်ချက် (Hope) တို့ကိုပါ တည်ဆောက်ပေးနေခြင်း ဖြစ်ပါသည်။`,
+
         "roadmap-h2": "လုပ်ဆောင်မည့် အစီအစဉ်များ",
         "roadmap-p": "ကျွန်ုပ်တို့၏ စီမံကိန်းအဆင့်ဆင့်အား ဖော်ပြချက်",
 
@@ -39,11 +51,19 @@ export const translations: Translations = {
         "zk-btn-verify": "VERIFY PROOF HASH",
         "zk-verified-msg": "✅ Verified: ကျောင်းသားသည် Robotics ကျွမ်းကျင်ပါသည်။ တည်နေရာကို မသိရှိရပါ။",
         "zk-placeholder": "Proof Hash ကို ဤနေရာတွင် ထည့်ပါ...",
+        "zk-verify-h1": "Credential Verification",
+        "zk-verify-p": "လုံခြုံစိတ်ချရသော Blockchain ကွန်ရက်ပေါ်တွင် ကျောင်းသားများ၏ အရည်အချင်းကို စစ်ဆေးပါ။",
+        "zk-verify-btn": "Verify Credential",
+        "zk-verified": "Verification Successful",
+        "zk-skill": "ကျွမ်းကျင်မှု",
+        "zk-loc": "တည်နေရာ",
 
         "work-h2": "ကျွန်ုပ်တို့ ဘာတွေလုပ်သလဲ",
         "work-p": "နည်းပညာဖြင့် ဘဝများကို ပြောင်းလဲပေးခြင်း",
-        "showcase-h2": "Project Showcase", "showcase-p": "ကလေးငယ်များ၏ လက်တွေ့ဖန်တီးမှု မှတ်တိုင်များ",
-        "ai-h2": "✨ AI Mentor Hub", "ai-p": "သင့်မှာရှိတဲ့ ပစ္စည်းတွေနဲ့ ဘာတွေ တီထွင်လို့ရမလဲ? AI ကို မေးကြည့်လိုက်ပါ။",
+        "showcase-h2": "Project Showcase", 
+        "showcase-p": "ကျောင်းသား/သူများ ကိုယ်တိုင် လုပ်ဆောင်ခဲ့သော Project များကို ပြသပြီး၊ သူတို့၏ တီထွင်နိုင်စွမ်းနှင့် လေ့လာသင်ယူလိုမှုကို အဓိကဖော်ပြကာ တီထွင်မှုမှတ်တိုင်အဖြစ် ဂုဏ်ပြုတင်ဆက်ထားခြင်း ဖြစ်ပါသည်။",
+        
+        "ai-h2": "AI Mentor Hub", "ai-p": "သင့်မှာရှိတဲ့ ပစ္စည်းတွေနဲ့ ဘာတွေ တီထွင်လို့ရမလဲ? AI ကို မေးကြည့်လိုက်ပါ။",
         "ai-input-label": "Command Center / Input Question", "ai-tag-1": "#DIYProject", "ai-tag-2": "#CareerPath", "ai-btn": "NEURAL PROCESSING",
         "ai-loading": "Insight များအား စုစည်းနေပါသည်...", "ai-idle": "အပေါ်က အကွက်မှာ စာရိုက်ပြီး Neural Processing စတင်လိုက်ပါ...",
         
@@ -79,15 +99,27 @@ export const translations: Translations = {
         "donate-secure-request": "သီးသန့် (One-time) လိပ်စာ တောင်းခံရန်"
     },
     en: {
-        "nav-brand": "SEIK KUU", "nav-history": "About US", "nav-tech": "Credentials", "nav-work": "Our Work", "nav-showcase": "Showcase", "nav-ai": "AI Mentor", "nav-contact": "Contact", "nav-join": "JOIN US",
+        "nav-brand": "SEIK KUU", "nav-history": "HISTORY", "nav-tech": "TECH", "nav-work": "WORK", "nav-showcase": "SHOWCASE", "nav-ai": "AI MENTOR", "nav-contact": "CONTACT", "nav-join": "JOIN US",
         "hero-badge": "Tech Makes Everything", "hero-h1-1": "Follow Your Dream...",
         "hero-p": "From competition winners to community builders, we are bringing technology to the hearts of those who need it most through STEM and Robotics.",
         "btn-ai-mentor": "AI MENTOR", "btn-showcase": "SHOWCASE",
         
-        "about-h2": "Who We Are",
+        "about-h2": "About Us",
         "about-p": "Seik Kuu is not just a robotics project; it is a movement for Digital Resilience. We operate at the intersection of conflict and innovation, ensuring that displacement does not mean disconnection. By leveraging modern technology, we are building a borderless classroom for the children of Myanmar.",
         "about-quote": "Meaning: \"Idea\" or \"Imagination\"",
-        
+        "btn-read-more": "See More",
+        "about-full": `The Seik Kuu Project was established in 2024 as an educational movement dedicated to children in conflict-affected regions of Myanmar. Our primary mission is to ensure that geographical limitations and displacement do not extinguish the dreams of young innovators.
+
+Children living in Internally Displaced Person (IDP) camps often face not only a loss of formal education but also a disconnection from the modern digital world. "Seik Kuu" aims to bridge this gap by providing practical, hands-on training in STEM (Science, Technology, Engineering, Mathematics) and Robotics.
+
+We utilize simple cardboard, recycled materials, and basic electronic components to foster "Low-cost, High-impact" innovations. Students learn to build their own robots, write code, and invent tools that can solve daily problems in their communities.
+
+Furthermore, we leverage Blockchain technology to issue "Soulbound Token (SBT)" certificates. This ensures that every student's academic records and achievements are securely stored on an immutable ledger. Even if they are forced to move or lose their physical documents, their verified skills remain with them forever.
+
+We also integrate AI technology through our "Ready" AI Mentor, providing 24/7 guidance. Students can simply list the materials they have at hand, and the AI will suggest viable engineering projects, fostering creativity and resourcefulness.
+
+Seik Kuu provides more than just education; we are building Confidence, Resilience, and Hope for a future where talent knows no borders.`,
+
         "roadmap-h2": "Strategic Phases",
         "roadmap-p": "Our path towards empowering dreams",
 
@@ -115,11 +147,19 @@ export const translations: Translations = {
         "zk-btn-verify": "VERIFY PROOF HASH",
         "zk-verified-msg": "✅ Verified: User has Advanced Robotics Skills. Location Private.",
         "zk-placeholder": "Paste proof hash here...",
+        "zk-verify-h1": "Credential Verification",
+        "zk-verify-p": "Verify student skill proofs on the secure blockchain network.",
+        "zk-verify-btn": "Verify Credential",
+        "zk-verified": "Verification Successful",
+        "zk-skill": "Skill Level",
+        "zk-loc": "Location",
 
         "work-h2": "What We Do",
         "work-p": "Building a brighter future through hands-on education",
-        "showcase-h2": "Project Showcase", "showcase-p": "Student milestones and practical creations",
-        "ai-h2": "✨ AI Mentor Hub", "ai-p": "What can you invent with your materials? Ask our AI.",
+        "showcase-h2": "Project Showcase", 
+        "showcase-p": "Demonstrating students' creativity and willingness to learn by displaying their self-made projects, honoring their innovation milestones.",
+        
+        "ai-h2": "AI Mentor Hub", "ai-p": "What can you invent with your materials? Ask our AI.",
         "ai-input-label": "Command Center / Input Question", "ai-tag-1": "#DIYProject", "ai-tag-2": "#CareerPath", "ai-btn": "NEURAL PROCESSING",
         "ai-loading": "Synthesizing Insights...", "ai-idle": "Enter text above to start Neural Processing...",
         
@@ -161,28 +201,28 @@ export const workData: WorkItem[] = [
         enT: "STEM Education",
         myD: "အခြေခံ သိပ္ပံ၊ นည်းပညာ၊ အင်ဂျင်နီယာနှင့် သင်္ချာဘာသာရပ်များကို ကလေးငယ်များအတွက် လက်တွေ့သင်ကြားပေးခြင်း။",
         enD: "Providing practical STEM education covering science, technology, engineering, and mathematics for children.",
-        icon: "🔬"
+        color: "text-cyan-400"
     },
     {
         myT: "Robotics အလုပ်ရုံဆွေးနွေးပွဲ",
         enT: "Robotics Workshops",
         myD: "စက်ရုပ်များ ကိုယ်တိုင်တည်ဆောက်ခြင်းနှင့် ပရိုဂရမ်ရေးဆွဲခြင်းများကို အခြေခံမှစတင်၍ သင်ကြားပေးခြင်း။",
         enD: "Hands-on robotics workshops where students build and program their own robots from scratch.",
-        icon: "🤖"
+        color: "text-orange-400"
     },
     {
         myT: "Digital Literacy",
         enT: "Digital Literacy",
         myD: "ကွန်ပျူတာအသုံးပြုမှုနှင့် အင်တာနက်ကို ဘေးကင်းလုံခြုံစွာ အသုံးပြုနိုင်ရန် ကျွမ်းကျင်မှုများ လေ့ကျင့်ပေးခြင်း။",
         enD: "Equipping students with essential computer skills and safe internet practices for the digital age.",
-        icon: "💻"
+        color: "text-purple-400"
     },
     {
         myT: "Maker Space",
         enT: "Maker Space",
         myD: "တီထွင်ဖန်တီးလိုစိတ်ရှိသော ကလေးများအတွက် လိုအပ်သော ကိရိယာများနှင့် ပတ်ဝန်းကျင်ကို ဖန်တီးပေးခြင်း။",
         enD: "Creating an environment with tools and resources for students to experiment and invent.",
-        icon: "🛠️"
+        color: "text-emerald-400"
     }
 ];
 
@@ -265,13 +305,13 @@ export const joinData: JoinItem[] = [
     {
         myT: "မိတ်ဖက်",
         enT: "Partner",
-        emoji: "🤝",
+        iconUrl: "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/partner%20.svg",
         border: "border-indigo-500"
     },
     {
         myT: "အလှူရှင်",
         enT: "Donor",
-        emoji: "💎",
+        iconUrl: "https://raw.githubusercontent.com/Khunnaingpyaehtun/Seik-Kuu/main/images/icon/doner.svg",
         border: "border-orange-500"
     }
 ];
@@ -279,29 +319,38 @@ export const joinData: JoinItem[] = [
 export const roadmapData: RoadmapItem[] = [
     {
         phase: "Phase 1",
-        myTitle: "အခြေခံ အုတ်မြစ်",
-        enTitle: "Foundation",
-        myDesc: "IDP စခန်းများတွင် STEM သင်ရိုးညွှန်းတမ်းများ စတင်မိတ်ဆက်ခြင်း။",
-        enDesc: "Introducing basic STEM curriculum in displacement camps.",
-        icon: "🌱",
-        status: "completed"
-    },
-    {
-        phase: "Phase 2",
-        myTitle: "နည်းပညာ တိုးချဲ့ခြင်း",
-        enTitle: "Tech Expansion",
-        myDesc: "Blockchain နှင့် AI စနစ်များကို အသုံးပြု၍ ပညာရေးကို အားကောင်းစေခြင်း။",
-        enDesc: "Deploying Blockchain credentials and AI Mentorship hubs.",
-        icon: "🚀",
+        myTitle: "အခြေခံ တည်ဆောက်ခြင်း",
+        enTitle: "Foundation & Development",
+        myDesc: "သင်ရိုးညွှန်းတမ်းများ ရေးဆွဲခြင်း၊ Web Platform ဖန်တီးခြင်းနှင့် Web3 နည်းပညာများ ထည့်သွင်းခြင်း။",
+        enDesc: "Developing curriculum, building the Web Platform, and integrating Web3 credentials.",
+        icon: "💻",
         status: "ongoing"
     },
     {
+        phase: "Phase 2",
+        myTitle: "ကွင်းဆင်းဆောင်ရွက်ခြင်း",
+        enTitle: "Pilot Implementation",
+        myDesc: "IDP စခန်းများသို့ ကိုယ်တိုင်သွားရောက်၍ Pilot Training များပေးခြင်းနှင့် လက်တွေ့ Feedback များ ရယူခြင်း။",
+        enDesc: "Conducting pilot training sessions in IDP camps and gathering on-ground feedback.",
+        icon: "⛺",
+        status: "future"
+    },
+    {
         phase: "Phase 3",
-        myTitle: "စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးမှု",
-        enTitle: "Sustainability",
-        myDesc: "ဒေသတွင်းမှ ကိုယ်တိုင်ဦးဆောင်နိုင်သော Maker Community များ တည်ထောင်ခြင်း။",
-        enDesc: "Establishing self-led Maker Communities within the region.",
-        icon: "⚖️",
+        myTitle: "ယှဉ်ပြိုင်မှုနှင့် တိုးချဲ့ခြင်း",
+        enTitle: "Competition & Global Reach",
+        myDesc: "Regional Competition များ ကျင်းပခြင်းနှင့် နိုင်ငံတကာပြိုင်ပွဲများသို့ ဝင်ရောက်ယှဉ်ပြိုင်ရန် ပြင်ဆင်ခြင်း။",
+        enDesc: "Organizing regional competitions and preparing students for international stages.",
+        icon: "🏆",
+        status: "future"
+    },
+    {
+        phase: "Phase 4",
+        myTitle: "Local AI နည်းပညာ",
+        enTitle: "Offline Local AI",
+        myDesc: "အင်တာနက် အခက်အခဲရှိသော ဒေသများအတွက် Offline အသုံးပြုနိုင်မည့် Local AI စနစ်များ တီထွင်ခြင်း။",
+        enDesc: "Developing Offline Local AI models to run independently in low-connectivity areas.",
+        icon: "🤖",
         status: "future"
     }
 ];
