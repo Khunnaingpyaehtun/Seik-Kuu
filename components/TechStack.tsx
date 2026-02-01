@@ -18,6 +18,7 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
 
   const VALID_CODE = "SK-HERO-2025";
+  const CONTRACT_ADDRESS = "0xCE7cefB3B5A7eB44B59F60327A53c9Ce53B0afdE"; // Primus Verifier on Base Sepolia
 
   // Simulate Wallet Connection for "Web3 feel"
   const connectWallet = () => {
@@ -299,8 +300,10 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                                 <div className="absolute inset-0 terminal-overlay opacity-10"></div>
                                 <div className="relative z-10 text-slate-500 flex-grow">
                                     <p className={`${zkRole === 'student' ? 'text-orange-500' : 'text-indigo-500'} mb-2`}>PROTOCOL_v3.1_SNARK_VM</p>
-                                    <p>&gt; Connection established with SeikKuu-Mainnet...</p>
+                                    <p>&gt; Connection established with <span className="text-blue-400">Base Sepolia</span>...</p>
                                     <p>&gt; Initializing {zkRole?.toUpperCase()} parameters...</p>
+                                    <p>&gt; Verifier Contract: <a href={`https://sepolia.basescan.org/address/${CONTRACT_ADDRESS}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">{CONTRACT_ADDRESS.substring(0,8)}...{CONTRACT_ADDRESS.substring(38)}</a></p>
+                                    
                                     {zkStep !== 'idle' && (
                                         <>
                                             <p>&gt; Witness generation started...</p>
@@ -314,8 +317,8 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                                 </div>
                                 <div className="relative z-10 border-t border-white/5 pt-4">
                                      <div className="flex justify-between items-center text-[9px] text-slate-700">
-                                        <span>ZK-SNARK Protocol</span>
-                                        <span className="animate-pulse">● Online</span>
+                                        <span>ZK-SNARK Protocol (Primus)</span>
+                                        <span className="animate-pulse flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Base Sepolia</span>
                                      </div>
                                 </div>
                             </div>
