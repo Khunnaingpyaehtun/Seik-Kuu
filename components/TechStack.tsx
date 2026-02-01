@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface TechStackProps {
   t: (key: string) => string;
@@ -15,8 +15,15 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
   const [accessCode, setAccessCode] = useState('');
   const [codeError, setCodeError] = useState(false);
   const [txHash, setTxHash] = useState('');
+  const [walletAddress, setWalletAddress] = useState<string | null>(null);
 
   const VALID_CODE = "SK-HERO-2025";
+
+  // Simulate Wallet Connection for "Web3 feel"
+  const connectWallet = () => {
+    // Mock connection
+    setWalletAddress("0x71C...9A23");
+  };
 
   const handleVerifyCode = () => {
     if (accessCode.toUpperCase() === VALID_CODE) {
@@ -29,10 +36,11 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
 
   const handleMint = () => {
     setIssueStep('minting');
+    // Simulate blockchain latency
     setTimeout(() => {
-        setTxHash('0x' + Array.from({length: 40}, () => Math.floor(Math.random() * 16).toString(16)).join(''));
+        setTxHash('0x' + Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join(''));
         setIssueStep('success');
-    }, 2500);
+    }, 3000);
   };
 
   // ZK Verify Hub State
@@ -43,14 +51,14 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
   const handleAction = () => {
     if (zkRole === 'student') {
         setZkStep('processing');
-        setTimeout(() => setZkStep('result'), 2000);
+        setTimeout(() => setZkStep('result'), 2500);
     } else {
         if (!proofInput.trim()) return;
         setZkStep('processing');
         setTimeout(() => {
             if (proofInput.startsWith('0x')) setZkStep('result');
             else setZkStep('failed');
-        }, 2000);
+        }, 2500);
     }
   };
 
@@ -87,10 +95,20 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
             {activeHub === 'issue' && (
                 <div className="grid lg:grid-cols-2 gap-16 items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
                     <div className="space-y-8">
-                        <div className="space-y-2">
-                            <h3 className="text-3xl font-black text-white uppercase">{t('sbt-title')}</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">{t('sbt-auth-msg')}</p>
+                        <div className="flex justify-between items-start">
+                             <div className="space-y-2">
+                                <h3 className="text-3xl font-black text-white uppercase">{t('sbt-title')}</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed">{t('sbt-auth-msg')}</p>
+                            </div>
+                            {/* Fake Wallet Button for realism */}
+                            <button 
+                                onClick={connectWallet}
+                                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest border transition-all ${walletAddress ? 'bg-green-500/10 border-green-500 text-green-400' : 'bg-slate-800 border-white/10 text-slate-400 hover:text-white'}`}
+                            >
+                                {walletAddress ? `● ${walletAddress}` : 'Connect Wallet'}
+                            </button>
                         </div>
+                       
                         
                         {issueStep === 'info' && (
                             <div className="space-y-6">
@@ -145,17 +163,26 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                         )}
 
                         {issueStep === 'minting' && (
-                             <div className="flex flex-col items-center justify-center space-y-8 p-20">
-                                <div className="loader !w-16 !h-16 border-[4px]"></div>
-                                <p className="text-cyan-400 font-black uppercase tracking-[0.5em] animate-pulse">{t('sbt-processing')}</p>
+                             <div className="flex flex-col items-center justify-center space-y-8 p-10 bg-black/20 rounded-[2rem] border border-white/5">
+                                <div className="relative">
+                                    <div className="loader !w-20 !h-20 border-[6px]"></div>
+                                    <div className="absolute inset-0 flex items-center justify-center text-xs font-mono text-cyan-400">HASHING</div>
+                                </div>
+                                <div className="space-y-2 text-center">
+                                    <p className="text-cyan-400 font-black uppercase tracking-[0.5em] animate-pulse">{t('sbt-processing')}</p>
+                                    <p className="text-[10px] text-slate-500 font-mono">Confirming Transaction on Block #18294...</p>
+                                </div>
                              </div>
                         )}
 
                         {issueStep === 'success' && (
                             <div className="p-10 bg-green-500/10 border border-green-500/20 rounded-[2.5rem] text-center space-y-6">
-                                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-3xl mx-auto">✅</div>
+                                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-3xl mx-auto shadow-[0_0_20px_rgba(34,197,94,0.3)]">✅</div>
                                 <p className="text-green-400 text-lg font-black uppercase tracking-wide">{t('sbt-success')}</p>
-                                <p className="text-[10px] text-slate-500 font-mono break-all opacity-70 p-4 bg-black/40 rounded-xl">TX: {txHash}</p>
+                                <div className="p-4 bg-black/40 rounded-xl text-left border border-white/5">
+                                    <p className="text-[10px] text-slate-500 font-bold uppercase mb-1">Transaction Hash:</p>
+                                    <p className="text-[10px] font-mono text-green-300 break-all">{txHash}</p>
+                                </div>
                                 <button onClick={() => {setIssueStep('info'); setAccessCode('');}} className="text-xs text-slate-400 hover:text-white uppercase font-black underline underline-offset-4">Issue Another Certificate</button>
                             </div>
                         )}
@@ -176,6 +203,9 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                                 <span className="text-[9px] font-mono text-slate-600">ID: #SK{Math.floor(Math.random()*9000)+1000}</span>
                                 <div className="px-2 py-0.5 rounded bg-green-500/10 text-green-500 text-[8px] font-black uppercase">Verified</div>
                             </div>
+                            
+                            {/* Holographic overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rounded-[2.5rem] pointer-events-none"></div>
                         </div>
                     </div>
                 </div>
@@ -272,9 +302,9 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                                 )}
                             </div>
 
-                            <div className="h-[450px] bg-slate-950 rounded-[2.5rem] border border-white/5 p-8 relative overflow-hidden shadow-inner font-mono text-[11px] leading-relaxed">
+                            <div className="h-[450px] bg-slate-950 rounded-[2.5rem] border border-white/5 p-8 relative overflow-hidden shadow-inner font-mono text-[11px] leading-relaxed flex flex-col">
                                 <div className="absolute inset-0 terminal-overlay opacity-10"></div>
-                                <div className="relative z-10 text-slate-500">
+                                <div className="relative z-10 text-slate-500 flex-grow">
                                     <p className={`${zkRole === 'student' ? 'text-orange-500' : 'text-indigo-500'} mb-2`}>PROTOCOL_v3.1_SNARK_VM</p>
                                     <p>&gt; Connection established with SeikKuu-Mainnet...</p>
                                     <p>&gt; Initializing {zkRole?.toUpperCase()} parameters...</p>
@@ -288,10 +318,12 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
                                     {zkStep === 'processing' && <p className="animate-pulse mt-4 text-white">&gt; COMPUTING_CRYPTOGRAPHIC_PROOF...</p>}
                                     {zkStep === 'result' && <p className="text-green-500 font-black mt-6">&gt;&gt; SUCCESS: DATA_AUTHENTICATED_OK</p>}
                                     {zkStep === 'failed' && <p className="text-red-500 font-black mt-6">&gt;&gt; ERROR: INVALID_PROOF_SIGNATURE</p>}
-                                    <span className="inline-block w-2 h-4 bg-slate-700 animate-pulse ml-1 mt-2"></span>
                                 </div>
-                                <div className="absolute bottom-6 left-8 right-8 text-[9px] text-slate-700">
-                                    Notice: All computations are done locally. Private keys and displacement coordinates are never transmitted.
+                                <div className="relative z-10 border-t border-white/5 pt-4">
+                                     <div className="flex justify-between items-center text-[9px] text-slate-700">
+                                        <span>ZK-SNARK Protocol</span>
+                                        <span className="animate-pulse">● Online</span>
+                                     </div>
                                 </div>
                             </div>
                         </div>
