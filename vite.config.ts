@@ -5,8 +5,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
-    // This allows process.env to be used in the browser code
-    'process.env': process.env
+    // Specifically define process.env.API_KEY to satisfy the library requirement
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ''),
+    // Provide a basic polyfill for process.env to avoid ReferenceErrors
+    'process.env': '({})'
   },
   build: {
     outDir: 'dist',
