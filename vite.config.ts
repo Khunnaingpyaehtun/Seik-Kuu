@@ -4,13 +4,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
-    // Specifically define each key to avoid conflicting with React's own process.env usage
-    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || "")
+    // Correct way to replace process.env values in Vite
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ""),
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || "production")
   },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: false
+    sourcemap: false,
+    minify: 'esbuild'
   },
   server: {
     port: 3000
