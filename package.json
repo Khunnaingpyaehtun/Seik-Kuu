@@ -1,5 +1,5 @@
 {
-  "name": "seik-kuu",
+  "name": "seik-kuu-(-beta-ver-)",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,9 @@
   "dependencies": {
     "@google/genai": "^1.38.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react-dom": "^19.2.4",
     "react-router-dom": "6.22.3",
-    "recharts": "2.12.3"
+    "recharts": "^3.7.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

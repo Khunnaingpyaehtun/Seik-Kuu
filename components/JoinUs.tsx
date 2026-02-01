@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { joinData } from '../constants';
 import { Language } from '../types';
 
@@ -8,24 +10,38 @@ interface JoinUsProps {
 }
 
 const JoinUs: React.FC<JoinUsProps> = ({ t, lang }) => {
+  const navigate = useNavigate();
+
+  const handleJoinClick = (type: string) => {
+    if (type === 'Partner' || type === 'မိတ်ဖက်') {
+      navigate('/partner');
+    } else if (type === 'Donor' || type === 'အလှူရှင်') {
+      navigate('/donate');
+    }
+  };
+
   return (
-    <section id="join-us" className="container mx-auto px-4 md:px-6 py-20 scroll-mt-24">
-      <div className="text-center space-y-6 md:space-y-8 mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold text-white uppercase leading-[2.0]">
+    <section id="join-us" className="container mx-auto px-4 md:px-6 py-16 scroll-mt-24">
+      <div className="text-center space-y-4 mb-12">
+        <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
           {t('join-h2')}
         </h2>
-        <p className="text-slate-400 max-w-4xl mx-auto text-lg md:text-2xl font-bold leading-[3.0] px-4 text-center">
+        <p className="text-slate-400 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed px-4 text-center">
           {t('join-p')}
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
         {joinData.map((j, index) => (
-          <div key={index} className={`card-hover glass-panel p-8 md:p-12 rounded-[3rem] border-t-8 ${j.border} shadow-xl flex flex-col text-center`}>
-            <div className="text-5xl mb-8 flex justify-center">{j.emoji}</div>
-            <h3 className="text-3xl font-bold mb-4 text-white uppercase leading-[2.0]">
+          <button 
+            key={index} 
+            onClick={() => handleJoinClick(lang === 'my' ? j.myT : j.enT)}
+            className={`glass-panel p-6 md:p-8 rounded-2xl border-t-4 ${j.border} shadow-lg flex flex-col items-center text-center transition-all hover:-translate-y-2 hover:bg-white/5 active:scale-95 w-full`}
+          >
+            <div className="text-3xl md:text-4xl mb-4">{j.emoji}</div>
+            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
               {lang === 'my' ? j.myT : j.enT}
             </h3>
-          </div>
+          </button>
         ))}
       </div>
     </section>

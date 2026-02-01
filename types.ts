@@ -8,6 +8,16 @@ export interface WorkItem {
     icon: string;
 }
 
+export interface RoadmapItem {
+    phase: string;
+    myTitle: string;
+    enTitle: string;
+    myDesc: string;
+    enDesc: string;
+    icon: string;
+    status: 'completed' | 'ongoing' | 'future';
+}
+
 export interface ShowcaseItem {
     id: number;
     myTitle: string;

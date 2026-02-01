@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface ImpactProps {
@@ -15,12 +16,10 @@ const Impact: React.FC<ImpactProps> = ({ t }) => {
             </h2>
             <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
             {/* 
-                FIXES:
-                1. Reduced font size: lg:text-3xl (was 4xl). This creates more white space relative to line-height.
-                2. Leading: leading-[2.6]. Combined with smaller font, this separates lines effectively.
-                3. Padding: py-8. Ensures top/bottom lines aren't cut off by the container.
+                Scale font down slightly for longer content (text-2xl lg:text-3xl)
+                Maintain deep leading for readability.
             */}
-            <p className="text-base md:text-2xl lg:text-3xl text-white font-bold leading-[2.6] max-w-6xl mx-auto py-8">
+            <p className="text-base md:text-xl lg:text-2xl text-white font-bold leading-[2.6] max-w-6xl mx-auto py-8">
             {t('impact-p')}
             </p>
         </div>

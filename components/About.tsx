@@ -1,10 +1,29 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 
 interface AboutProps {
   t: (key: string) => string;
 }
 
+const auImages = [
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU1.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU2.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU3.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU4.jpg",
+  "https://raw.githubusercontent.com/Khunnaingpyaehtun/Tickets/main/AU5.jpg"
+];
+
 const About: React.FC<AboutProps> = ({ t }) => {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  // Auto-slide effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % auImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="container mx-auto px-4 md:px-6 py-20 scroll-mt-20 relative">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cyan-900/10 to-transparent pointer-events-none"></div>
@@ -24,35 +43,50 @@ const About: React.FC<AboutProps> = ({ t }) => {
               {t('about-p')}
             </p>
           </div>
-          <div className="bg-slate-950/60 rounded-[3rem] border border-white/10 p-8 flex flex-col items-center justify-center text-center space-y-4 shadow-[inset_0_2px_20px_rgba(0,0,0,0.5)] min-h-[200px] backdrop-blur-md hover:border-cyan-500/30 transition-colors">
-            <div className="text-4xl md:text-6xl opacity-30 tech-gradient font-black tracking-tighter">2018-2026</div>
-            <h3 className="text-xl font-bold text-cyan-400 uppercase tracking-widest">Seik Kuu</h3>
-            <div className="h-px w-12 bg-white/20"></div>
-            <p className="text-slate-500 italic text-xs leading-[2.0]">
-              {t('about-quote')}
-            </p>
+
+          {/* Image Gallery Section */}
+          <div className="flex flex-col gap-4">
+            <div className="relative aspect-square md:aspect-[4/5] lg:aspect-square bg-slate-950/60 rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl group/img">
+              {auImages.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`Seik Kuu Activity ${idx + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+                    idx === currentImg ? 'opacity-100 scale-100' : 'opacity-0 scale-110 pointer-events-none'
+                  }`}
+                />
+              ))}
+              
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              
+              {/* Navigation Indicators */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                {auImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImg(idx)}
+                    className={`h-1.5 transition-all duration-300 rounded-full ${
+                      idx === currentImg ? 'w-8 bg-cyan-400' : 'w-2 bg-white/30 hover:bg-white/50'
+                    }`}
+                    aria-label={`Go to image ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Float Badge */}
+              <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-[10px] font-black text-cyan-400 uppercase tracking-widest">
+                Our Impact
+              </div>
+            </div>
+            
+            <div className="px-4 text-center">
+               <p className="text-slate-500 italic text-[10px] leading-[2.0] uppercase tracking-widest">
+                {t('about-quote')}
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Strategic Pillars */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="glass-panel p-8 rounded-[2.5rem] border-t-4 border-cyan-500 hover:bg-slate-800/50 transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(34,211,238,0.1)] group">
-            <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner border border-white/5 group-hover:border-cyan-500/30 transition-colors">🛡️</div>
-            <h3 className="text-xl font-bold text-white uppercase mb-3 leading-[2.0] group-hover:text-cyan-400 transition-colors">{t('pillar-resilience-t')}</h3>
-            <p className="text-slate-400 text-sm leading-[2.5]">{t('pillar-resilience-d')}</p>
-        </div>
-
-        <div className="glass-panel p-8 rounded-[2.5rem] border-t-4 border-orange-500 hover:bg-slate-800/50 transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(251,146,60,0.1)] group">
-            <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner border border-white/5 group-hover:border-orange-500/30 transition-colors">🏠</div>
-            <h3 className="text-xl font-bold text-white uppercase mb-3 leading-[2.0] group-hover:text-orange-400 transition-colors">{t('pillar-localism-t')}</h3>
-            <p className="text-slate-400 text-sm leading-[2.5]">{t('pillar-localism-d')}</p>
-        </div>
-
-        <div className="glass-panel p-8 rounded-[2.5rem] border-t-4 border-purple-500 hover:bg-slate-800/50 transition duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(168,85,247,0.1)] group">
-            <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner border border-white/5 group-hover:border-purple-500/30 transition-colors">⛓️</div>
-            <h3 className="text-xl font-bold text-white uppercase mb-3 leading-[2.0] group-hover:text-purple-400 transition-colors">{t('pillar-blockchain-t')}</h3>
-            <p className="text-slate-400 text-sm leading-[2.5]">{t('pillar-blockchain-d')}</p>
         </div>
       </div>
     </section>

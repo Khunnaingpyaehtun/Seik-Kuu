@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { getGeminiResponse } from '../services/geminiService';
 import { Language } from '../types';
@@ -110,7 +111,6 @@ const AIMentor: React.FC<AIMentorProps> = ({ t, lang }) => {
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <span>{t('ai-btn')}</span>
-                    <span className="text-xl">🚀</span>
                   </span>
                 </button>
               </div>
