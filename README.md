@@ -151,6 +151,7 @@ We welcome contributions from developers, educators, and designers!
 ##  Acknowledgements
 
 *   **ETHChiangMai** For providing the technology to make AI mentorship possible.
+*   **Special Thanks** Martin for suggesting the mascot ai idea. 
 *   **IDP Community Teachers:** The real heroes working on the ground to keep education alive.
 
 ---
