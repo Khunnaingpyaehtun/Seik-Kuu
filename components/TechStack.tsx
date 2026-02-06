@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
+import { logger } from '../services/loggerService';
+import { security } from '../services/securityService';
 
 interface TechStackProps {
   t: (key: string) => string;
@@ -22,25 +24,38 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
 
   // Simulate Wallet Connection for "Web3 feel"
   const connectWallet = () => {
-    // Mock connection
+    logger.log('INFO', 'WALLET_CONNECT', 'User simulated wallet connection');
     setWalletAddress("0x71C...9A23");
   };
 
   const handleVerifyCode = () => {
+    // Security check
+    if (!security.validateAccessCode(accessCode)) {
+        setCodeError(true);
+        return;
+    }
+
     if (accessCode.toUpperCase() === VALID_CODE) {
+        logger.log('INFO', 'CODE_VERIFIED', `Valid code used: ${course}`);
         setIssueStep('authorized');
         setCodeError(false);
     } else {
+        logger.log('WARN', 'INVALID_CODE_ATTEMPT', `Invalid code tried: ${accessCode}`);
         setCodeError(true);
     }
   };
 
   const handleMint = () => {
+    const cleanName = security.sanitize(name);
+    logger.log('INFO', 'MINT_INIT', `Minting process started for ${cleanName}`);
     setIssueStep('minting');
+    
     // Simulate blockchain latency
     setTimeout(() => {
-        setTxHash('0x' + Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join(''));
+        const hash = '0x' + Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+        setTxHash(hash);
         setIssueStep('success');
+        logger.log('INFO', 'MINT_SUCCESS', `SBT minted successfully: ${hash}`);
     }, 3000);
   };
 
@@ -51,14 +66,24 @@ const TechStack: React.FC<TechStackProps> = ({ t }) => {
 
   const handleAction = () => {
     if (zkRole === 'student') {
+        logger.log('INFO', 'ZK_GENERATE', 'Generating ZK Proof');
         setZkStep('processing');
         setTimeout(() => setZkStep('result'), 2500);
     } else {
         if (!proofInput.trim()) return;
+        const cleanProof = security.sanitize(proofInput);
+        
+        logger.log('INFO', 'ZK_VERIFY_INIT', 'Verifying ZK Proof');
         setZkStep('processing');
         setTimeout(() => {
-            if (proofInput.startsWith('0x')) setZkStep('result');
-            else setZkStep('failed');
+            if (cleanProof.startsWith('0x')) {
+                setZkStep('result');
+                logger.log('INFO', 'ZK_VERIFY_SUCCESS', 'Proof validated on-chain');
+            }
+            else {
+                setZkStep('failed');
+                logger.log('WARN', 'ZK_VERIFY_FAIL', 'Invalid proof signature');
+            }
         }, 2500);
     }
   };

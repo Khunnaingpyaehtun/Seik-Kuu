@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { getGeminiResponse } from '../services/geminiService';
 import { Language } from '../types';
+import { logger } from '../services/loggerService';
+import { security } from '../services/securityService';
 
 interface AIMentorProps {
   t: (key: string) => string;
@@ -15,13 +17,32 @@ const AIMentor: React.FC<AIMentorProps> = ({ t, lang }) => {
 
   const handleAsk = async () => {
     if (!input.trim()) return;
+
+    // 1. Rate Limit Check
+    if (!security.checkRateLimit('AI_PROMPT')) {
+        setResponse("⚠️ Rate limit exceeded. Please wait a moment before asking again.");
+        return;
+    }
+
+    // 2. Input Sanitization
+    const cleanInput = security.sanitize(input);
+
     setLoading(true);
+    logger.log('INFO', 'AI_REQUEST_START', 'User initiated AI prompt');
+
     try {
-      const text = await getGeminiResponse(input, lang);
-      setResponse(text || "No response received.");
+      const text = await getGeminiResponse(cleanInput, lang);
+      // 3. Output Sanitization (though Gemini is usually safe, we sanitize to be sure)
+      const cleanResponse = security.sanitize(text || "");
+      
+      setResponse(cleanResponse || "No response received.");
       setInput('');
+      logger.log('INFO', 'AI_REQUEST_SUCCESS', 'Received response from Gemini');
+
     } catch (error) {
-      setResponse(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      const errMsg = error instanceof Error ? error.message : 'Unknown error';
+      logger.log('ERROR', 'AI_REQUEST_FAILED', errMsg);
+      setResponse(`Error: ${errMsg}`);
     } finally {
       setLoading(false);
     }
@@ -129,7 +150,10 @@ const AIMentor: React.FC<AIMentorProps> = ({ t, lang }) => {
                   <div className="h-4 w-px bg-white/10 mx-1"></div>
                   <span className="text-[9px] font-black text-slate-400 tracking-[0.2em] uppercase">Status: Online</span>
                 </div>
-                <span className="text-[9px] font-mono text-orange-500 tracking-widest uppercase animate-pulse">Neural_v3.0_Report</span>
+                <div className="flex items-center gap-2">
+                    <span className="text-[9px] font-mono text-slate-600 uppercase">SECURE_CHANNEL</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                </div>
               </div>
 
               <div className="flex-1 p-6 md:p-10 overflow-y-auto custom-scrollbar relative z-10">

@@ -112,7 +112,7 @@ const Footer: React.FC<FooterProps> = ({ t, lang = 'my' }) => {
           <p className="text-[9px] text-slate-600 font-black uppercase tracking-[0.2em]">
             © 2026 Seik Kuu Project.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             <span className="text-[9px] text-slate-700 font-bold uppercase tracking-widest">Digital Resilience</span>
             <span className="text-[9px] text-slate-700 font-bold uppercase tracking-widest">Maker Education</span>
           </div>

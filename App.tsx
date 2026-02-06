@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import PartnerPage from './components/PartnerPage';
 import DonatePage from './components/DonatePage';
 import ReadyAgent from './components/ReadyAgent';
+import AdminPanel from './components/AdminPanel';
 import { translations } from './constants';
 import { Language } from './types';
 
@@ -56,28 +57,35 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <ScrollToTop />
-      <ContentWrapper lang={lang} setLang={setLang} t={t}>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero t={t} />
-              <About t={t} />
-              <Impact t={t} />
-              <Roadmap t={t} lang={lang} />
-              <Work t={t} lang={lang} />
-              <Showcase t={t} lang={lang} limit={4} />
-              <JoinUs t={t} lang={lang} />
-            </>
-          } />
-          <Route path="/about" element={<AboutPage t={t} />} />
-          <Route path="/tech" element={<TechStack t={t} />} />
-          <Route path="/showcase" element={<Showcase t={t} lang={lang} />} />
-          <Route path="/project/:id" element={<ProjectDetail t={t} lang={lang} />} />
-          <Route path="/ai-lab" element={<AIMentor t={t} lang={lang} />} />
-          <Route path="/partner" element={<PartnerPage t={t} lang={lang} />} />
-          <Route path="/donate" element={<DonatePage t={t} lang={lang} />} />
-        </Routes>
-      </ContentWrapper>
+      <Routes>
+        {/* Admin Route outside of main layout wrapper for full focus */}
+        <Route path="/admin" element={<AdminPanel />} />
+        
+        <Route path="*" element={
+            <ContentWrapper lang={lang} setLang={setLang} t={t}>
+                <Routes>
+                <Route path="/" element={
+                    <>
+                    <Hero t={t} />
+                    <About t={t} />
+                    <Impact t={t} />
+                    <Roadmap t={t} lang={lang} />
+                    <Work t={t} lang={lang} />
+                    <Showcase t={t} lang={lang} limit={4} />
+                    <JoinUs t={t} lang={lang} />
+                    </>
+                } />
+                <Route path="/about" element={<AboutPage t={t} />} />
+                <Route path="/tech" element={<TechStack t={t} />} />
+                <Route path="/showcase" element={<Showcase t={t} lang={lang} />} />
+                <Route path="/project/:id" element={<ProjectDetail t={t} lang={lang} />} />
+                <Route path="/ai-lab" element={<AIMentor t={t} lang={lang} />} />
+                <Route path="/partner" element={<PartnerPage t={t} lang={lang} />} />
+                <Route path="/donate" element={<DonatePage t={t} lang={lang} />} />
+                </Routes>
+            </ContentWrapper>
+        } />
+      </Routes>
     </HashRouter>
   );
 };
