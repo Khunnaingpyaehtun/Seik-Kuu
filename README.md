@@ -158,5 +158,5 @@ We welcome contributions from developers, educators, and designers!
 
 <div align="center">
   <p>Built with heart and Resilience.</p>
-  <p>© 2025 Seik Kuu Project</p>
+  <p>© 2026 Seik Kuu Project</p>
 </div>
